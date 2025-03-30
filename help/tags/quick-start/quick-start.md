@@ -5,27 +5,25 @@ exl-id: 490ee344-3b18-4189-9293-2378f86fb10d
 ---
 # Quickstart guide
 
->[!NOTE]
->
->Adobe Experience Platform Launch has been rebranded as a suite of data collection technologies in Adobe Experience Platform. Several terminology changes have rolled out across the product documentation as a result. Please refer to the following [document](../term-updates.md) for a consolidated reference of the terminology changes.
-
-Tags are Adobe Experience Platform's next generation of tag management technology. It is built from the ground up to support an open and sustainable ecosystem where anyone can build their own integrations that Adobe customers can deploy to their sites. It is an API first application so anything you can do through the UI you can also do programmatically through an API.
-
-The basic tags workflow:
-
-1. Set up groups and users.
-2. Log in.
-3. Create a property.
-4. Install extensions.
-5. Create data elements and rules.
-6. Test in your dev environment.
-7. Promote to production.
+* basic tags workflow
+  1. Set up groups and users.
+  2. Log in.
+  3. Create a property.
+  4. Install extensions.
+  5. Create data elements and rules.
+  6. Test in your dev environment.
+  7. Promote to production.
 
 ## 1. Set up groups and users
 
-Tags are fully integrated with your Adobe ID. User permissions are managed through the Admin Console with other Adobe products and solutions from the [!DNL Creative Cloud], [!DNL Document Cloud], and Experience Cloud.
+* Tags -- are FULLY integrated with your -- Adobe ID
+* TODO:
+ User permissions are managed through the Admin Cons ole with other Adobe products and solutions from the [!DNL Creative Cloud], [!DNL Document Cloud], and Experience Cloud.
 
-Tags have a rights-based user management system. This means that individual rights must be granted explicitly. These rights are assigned to groups, then users are added to the appropriate groups in order to gain access. Even if your organization has access to Data Collection, individual users cannot do anything until an administrator explicitly grants them some rights.
+Tags have a rights-based user management system.
+ This means that individual rights must be granted explicitly.
+ These rights are assigned to groups, then users are added to the appropriate groups in order to gain access.
+ Even if your organization has access to Data Collection, individual users cannot do anything until an administrator explicitly grants them some rights.
 
 For detailed instructions on how to create groups and add users for tags, see the [data collection permissions guide](../../collection/permissions.md).
 
