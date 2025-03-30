@@ -5,42 +5,49 @@ exl-id: 9b48847a-6133-4dbd-b17d-e7b88152ad7d
 ---
 # User permissions for tags
 
->[!NOTE]
->
->Adobe Experience Platform Launch has been rebranded as a suite of data collection technologies in Adobe Experience Platform. Several terminology changes have rolled out across the product documentation as a result. Please refer to the following [document](../../term-updates.md) for a consolidated reference of the terminology changes.
+* User permissions for Adobe Experience Platform's tags -- are assigned, via Adobe Admin Console, to -- users
+  * 💡-- via -- product profiles 💡
+    * != assign to individual users
+    * DIFFERENT permissions / product files
 
-User permissions for tags in Adobe Experience Platform are assigned to users through Adobe Admin Console. Rather than being assigned to individual users, different sets of permissions are configured separately as product profiles. Users are then assigned to these product profiles in order to be granted the permissions they've been configured for.
+* goal
+  * types of permissions / tags
+  * functionalities / -- granted by the -- permissions
+  * basic implementation strategies / use cases
 
-This guide provides an overview of the different types of permissions available for tags, the functionalities they grant access to, and some basic implementation strategies for different business use cases.
-
->[!NOTE]
->
->For steps on how to configure permissions for users using Admin Console, please refer to the tutorial on [managing permissions for data collection](../../../collection/permissions.md).
-
-## Permission types
-
-Within a product profile, permissions for tags are divided into four categories:
+## Permission types / tags
 
 1. Platforms
-1. Properties
-1. Property Rights
-1. Company Rights
+2. Properties
+3. Property Rights
+4. Company Rights
 
 ### Platforms
 
-Each tag property has a platform. There are currently two platforms that you can use for tags: Web and Mobile. You can use this permission type to restrict or grant access to a particular type of property. This can be useful when the team that manages your mobile apps is different from the one that manages your websites.
+* EXIST platform / EACH tag property  
+* supported platforms
+  * Web
+  * Mobile
+* allows
+  * restricting OR granting access | PARTICULAR type of property
+* use case
+  * team / manages your mobile apps != team / manages your websites
 
 ### Properties
 
-By default, product profiles grant access to all properties that exist within your company, both currently and in the future. Using this permission type, you can restrict or grant access to specific existing properties by name.
+* by default, product profiles -- grant access to -- ALL properties / EXIST | your company 
+* allows
+  * restricting OR granting access / specific existing properties -- by -- name
 
 ### Property rights {#property-rights}
 
-Any tag property that you create in the UI becomes available in Admin Console, allowing you to group the property with specific property rights in the same product profile.
+* TODO:
+Any tag property that you create in the UI becomes available in Admin Console, allowing you to group the property with specific property rights in the same product profile
 
-For example, if a given product profile does not have access to Property A1, users who belong to that profile cannot see or modify any settings within Property A1.
 
-If a user belongs to a profile that does have access to Property A1, the actions they can perform within Property A1 are determined by the rights they have been granted from this profile. If a user has permissions for Property A1 but has no assigned rights, then they have read-only access for that property.
+For example, if a given product profile does not have access to Property A1, users who belong to that profile cannot see or modify any settings within Property A1
+If a user belongs to a profile that does have access to Property A1, the actions they can perform within Property A1 are determined by the rights they have been granted from this profile
+If a user has permissions for Property A1 but has no assigned rights, then they have read-only access for that property
 
 The following table outlines the available property rights and the functionalities they grant access to:
 
