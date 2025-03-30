@@ -10,6 +10,10 @@ exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
   * uses
     * customers -- can easily -- deploy & manage
       * analytics,
+        * _Example:_ if you deploy Adobe Analytics -> tags -- will --
+          * manage the AppMeasurement JavaScript library,
+          * populate variables,
+          * fire requests
       * marketing,
       * advertising tags
   * enable build & maintain their OWN extensions (== integrations) / available | [!DNL Adobe Experience Cloud] customers
@@ -34,7 +38,7 @@ exl-id: 23d882a5-1ddd-404b-a7e9-3000f1804971
 
 ### Extension catalog {#extension-catalog}
 
-* -- provided by -- INDEPENDENT software vendors
+* == third-party solutions -- via -- tags
 
 ### Rule builder {#rule-builder}
 
@@ -80,18 +84,20 @@ Different people can create an implementation, approve it, and publish it on you
 
 ### Light, modular container tag {#modular-tag}
 
-* TODO:
-The content of your container is minified, including your custom code.
- Everything is modular.
- If you don't need an item, it is not included in your library.
- The result is an implementation that is fast and compact.
- See [Minification](./ui/publishing/builds.md).
+* your container's content (INCLUDING your CUSTOM code) -- is -- [minified](./ui/publishing/builds.md)
+  * Reason: 🧠EVERYTHING is modular 🧠
+  * ❌if an item is NOT needed -> NOT included | your library ❌
+  * == implementation is fast & compact
 
 ## Other highlights {#other-highlights}
 
-Tags provide several improvements over similar systems, including:
-
-* No use of `document.write ()` where Chrome doesn't allow it.
-* The Page Top and Page Bottom rules are bundled into the main library to minimize unnecessary HTTP calls.
-* Custom action scripts within a rule can be loaded in parallel, but are executed sequentially.
-* If you avoid Page Top and Page Bottom rules, the code is mostly asynchronous, with a path to getting fully async.
+* ❌NO use `document.write ()` | Chrome does NOT allow it ❌
+* Page Top & Page Bottom rules
+  * -- are bundled into the -- MAIN library
+  * if you avoid them -> the code -- is -- MOSTLY asynchronous / 
+    * EXIST path -- to get -- FULLY async
+* CUSTOM rule's action scripts 
+  * -- can be loaded in -- parallel
+  * are executed sequentially
+* ❌NO additional charge ❌
+  * == AVAILABLE / ANY Adobe Experience Cloud customer
