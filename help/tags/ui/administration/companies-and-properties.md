@@ -5,71 +5,88 @@ exl-id: e5b4a853-c23e-498c-9e20-e773ea1de88b
 ---
 # Properties
 
->[!NOTE]
->
->Adobe Experience Platform Launch has been rebranded as a suite of data collection technologies in Adobe Experience Platform. Several terminology changes have rolled out across the product documentation as a result. Please refer to the following [document](../../term-updates.md) for a consolidated reference of the terminology changes.
+* == collection of rules / data elements / configured extensions / environments / libraries
 
 ## Web properties
 
-A web property is a collection of rules, data elements, configured extensions, environments, and libraries.  Each web property has its own set of embed codes and can be deployed on any number of distinct websites (different domains).
+* OWN set of embed codes / EACH web property 
+  * uses
+    * deploy | MULTIPLE DISTINCT websites (== domains)
+* 1 publish embed code / property
 
 ## Mobile properties
 
-A mobile property type can contain multiple applications. For example, in a mobile property you can manage the same set of rules and extensions across multiple iOS and Android applications.
+* -- can contain -- MULTIPLE applications
+* allows
+  * managing the SAME set of rules & extensions -- ACROSS -- MULTIPLE iOS & Android applications
+* 1 configuration app ID / property
 
-## Best practices for planning properties {#best-practices-for-planning-properties}
+## Best practices | plan properties {#best-practices-for-planning-properties}
 
-Each tag implementation in Adobe Experience Platform can be very different. They have a wide variety of data-collection needs, variable usage, extensions, third-party tags, other systems and technologies, people, teams, geographic regions, and so on. You should structure your properties in a way that matches your organization's workflow, and processes.
-
-Considering the following when planning properties:
-
-* Code structure
-* Data
-* Variables
-* Extensions, tags, and systems
-* People
+* take in account
+  * Code structure
+  * Data
+  * Variables
+  * Extensions, tags, and systems
+  * People
 
 ### Code structure
 
-Sites are based on HTML, mobile applications on code.  If the underlying HTML templates or codebases are the same for multiple sites and applications, you may want to consider using a single tag property to manage multiple sites or apps.
+* depending on product 
+  * sites -- are based on -- HTML
+  * mobile applications on -- are based on -- code 
+* if HTML templates or codebases are SAME | MULTIPLE sites & applications -> use 1! tag property / manage MULTIPLE sites or apps
 
 ### Data
 
-For all of your websites or applications, is the data you are going to collect very similar, somewhat similar, or unique?
-
-If the data you need to collect is similar, it might make sense to group those sites or applications into one property to avoid duplicating rules or copying rules from one property to another.
-
-If your data collection needs are unique for each site or application, it might make sense to separate them into their own properties. This method lets you control the data collection more specifically, without using large amounts of conditional logic in custom scripts.
+* if data / you collect is SIMILAR -> group those sites or applications | 1! property
+  * Reason 🧠 avoid 
+    * duplicating rules or
+    * copying rules 🧠
+* if your data collection needs to be UNIQUE / EACH site or application -> separate them / their OWN properties 
+* lets you
+  * control the data collection MORE specifically -- WITHOUT using -- large amounts of conditional logic | custom scripts
 
 ### Variables
 
-Similar to data, are the variables you are going to set in your [!DNL Analytics] and other extensions very similar, somewhat similar, or unique?
-
-For example, if eVar27 is used for the same source value across all of your websites or applications, it might make sense to group those sites or applications together so you can set those common variables in just one property.
+* wonder if the variables are
+  * similar,
+    * if they are SIMILAR | ACROSS sites or applications -> include | SAME property
+  * unique
 
 ### Extensions, tags, and systems
 
-Are the extensions, tags, and systems you are going to deploy very similar, somewhat similar, or unique?
-
-If the extensions, tags, and systems you are going to deploy are very similar across your sites or applications, you might want to include them in the same property.
-
-If you are deploying [!DNL Adobe Analytics] on only one site or application, and your other extensions and tags are also unique, you might want to create separate properties so that you have more control.
-
-For example, If you are deploying [!DNL Adobe Analytics], [!DNL Target], and the same 3rd-party extensions across all of your sites or applications, that is a reason to group together.
+* wonder if the extensions, tags, and systems / you are going to deploy, are
+  * similar,
+    * if they are SIMILAR | ACROSS sites or applications -> include | SAME property
+  * unique
+    * if you are deploying [!DNL Adobe Analytics] | 1! site or application & your OTHER extensions and tags are ALSO UNIQUE -> create separate properties
+      * Reason: 🧠 have MORE control 🧠
 
 ### People
 
-For the individuals, teams, and organizations that are working in Adobe Experience Platform, will they need access to all of your websites and applications, some of them, or just one?
+* wonder if individuals, teams, and organizations / work | Adobe Experience Platform, they need access to
+  * ALL your websites and applications,
+  * SOME of them,
+  * ONLY 1
 
-The User Management features allow you to assign different roles to different people for all of your properties, or on a per-property basis. If someone has sufficient rights, that person can perform administrative actions across all the properties in that Platform organization. All the other roles can be assigned on a per-property basis. You can even hide a property from certain users (non-admins) by not giving them any role in that property.
+* User Management features
+  * allow you to
+    * assign DIFFERENT roles / DIFFERENT people -- for --
+      * ALL your properties or
+      * per-property  
+    * hide a property / CERTAIN users (non-admins)
 
 ## Properties page
 
-A property is a collection of rules, data elements, configured extensions, environments, and libraries. For web, there is only one publish embed code per property. For mobile, there is one configuration app ID per property.
+* TODO:
+A property can be any grouping of one or more domains and subdomains. 
+You can manage and track these assets similarly. 
+For example, suppose that you have multiple websites based on one template, and you want to track the same assets on all of them. 
+You can apply one property to multiple domains.
 
-A property can be any grouping of one or more domains and subdomains. You can manage and track these assets similarly. For example, suppose that you have multiple websites based on one template, and you want to track the same assets on all of them. You can apply one property to multiple domains.
-
-The left side of the screen shows the companies in your organization. This is particularly useful if you manage multiple accounts. Select a company to see the properties and audit logs for that company.
+The left side of the screen shows the companies in your organization. This is particularly useful if you manage multiple accounts. 
+Select a company to see the properties and audit logs for that company.
 
 Each property is shown in the Properties list.
 
@@ -79,7 +96,8 @@ The Properties list shows the following information:
 * Platform
 * Status
 
-Select a property to see an overview of that property. The overview shows any activity performed on the property. It also lists the metrics and extensions for the property.
+Select a property to see an overview of that property. The overview shows any activity performed on the property. 
+It also lists the metrics and extensions for the property.
 
 ## Create or configure a property
 
@@ -131,14 +149,9 @@ After your property is created, Platform automatically adds a default host, a se
 
 ## Delete a property
 
-Follow the steps below to delete a tag property.
-
->[!NOTE]
->
->Property removal cannot be reversed. The requestor must be an admin-level user. This request cannot be undone.
-
-1. In the Properties list, select the property you want to delete.
-
-   You can select multiple properties to delete.
-
-1. Select **[!UICONTROL Delete]**, then confirm the removal of the property.
+* ❌can NOT be reversed❌
+* requirements
+  * admin-level user
+* steps
+  1. \| Properties list, select the property(S) / you want to delete
+  2. Select **[!UICONTROL Delete]**
