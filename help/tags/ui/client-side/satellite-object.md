@@ -3,32 +3,22 @@ title: Satellite Object Reference
 description: Learn about the client-side _satellite object and the various functions you can perform with it in tags.
 exl-id: f8b31c23-409b-471e-bbbc-b8f24d254761
 ---
-# Satellite object reference
-
->[!NOTE]
->
->Adobe Experience Platform Launch has been rebranded as a suite of data collection technologies in Adobe Experience Platform. Several terminology changes have rolled out across the product documentation as a result. Please refer to the following [document](../../term-updates.md) for a consolidated reference of the terminology changes.
-
-This document serves as a reference for the client-side `_satellite` object and the various functions you can perform with it.
+# Satellite object reference -- `_satellite` --
 
 ## `track`
 
-**Code**
-
-```javascript
-_satellite.track(identifier: string [, detail: *] )
-```
-
-**Example**
-
-```javascript
-_satellite.track('contact_submit', { name: 'John Doe' });
-```
-
-`track` fires all rules using the Direct Call event type that has been configured with the given identifier from the Core tag extension. The above example triggers all rules using a Direct Call event type where the configured identifier is `contact_submit`. An optional object containing related information is also passed. The detail object can be accessed by entering `%event.detail%` within a text field in a condition or action or `event.detail` inside the code editor in a Custom Code condition or action.
+* 👀fires ALL rules -- via -- Direct Call event type / configured with the given Core tag extension's identifier👀
+* `_satellite.track(identifier: string [, detail: *] )`
+  * `detail`
+    * -- can be accessed by -- entering `%event.detail%` | condition's text field or action's text field
+* _Example:_
+    ```javascript
+    _satellite.track('contact_submit', { name: 'John Doe' });
+    ```
 
 ## `getVar`
 
+* TODO:
 **Code**
 
 ```javascript
@@ -41,7 +31,9 @@ _satellite.getVar(name: string) => *
 var product = _satellite.getVar('product');
 ```
 
-In the example provided, if a data element exists with a matching name, the data element's value will be returned. If no matching data element exists, it will then check to see if a custom variable with a matching name has previously been set using `_satellite.setVar()`. If a matching custom variable is found, its value will be returned.
+In the example provided, if a data element exists with a matching name, the data element's value will be returned.
+If no matching data element exists, it will then check to see if a custom variable with a matching name has previously been set using `_satellite.setVar()`. 
+If a matching custom variable is found, its value will be returned.
 
 >[!NOTE]
 >
@@ -348,7 +340,8 @@ This removes a cookie from the user's browser.
 
 ## Debugging Functions
 
-The following functions should not be accessed from the production code. They are intended only for debugging purposes and will change over time as needed.
+The following functions should not be accessed from the production code. 
+They are intended only for debugging purposes and will change over time as needed.
 
 ### `container`
 
