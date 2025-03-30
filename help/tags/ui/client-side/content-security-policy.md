@@ -5,26 +5,34 @@ exl-id: 9232961e-bc15-47e1-aa6d-3eb9b865ac23
 ---
 # Content Security Policy (CSP) support
 
->[!NOTE]
->
->Adobe Experience Platform Launch has been rebranded as a suite of data collection technologies in Adobe Experience Platform. Several terminology changes have rolled out across the product documentation as a result. Please refer to the following [document](../../term-updates.md) for a consolidated reference of the terminology changes.
+* goal
+  * impact of CSP | tag implementations and what you can do about it.
 
-A Content Security Policy (CSP) is a security feature that helps prevent cross-site scripting attacks (XSS). This happens when the browser is tricked into running malicious content that appears to come from a trusted source but is really coming from somewhere else. CSPs allow the browser (on behalf of the user) to verify that the script is actually coming from a trusted source.
+* Content Security Policy (CSP)
+  * == security feature / 
+    * -- helps -- prevent cross-site scripting attacks (XSS)
+    * enable the browser --- to verify that the script -- is actually coming from a -- trusted source
+  * ways to implement it
+    * add a `Content-Security-Policy` HTTP header | your server responses, or
+    * add a configured `<meta>` element | your HTML files' `<head>` section  
+  * [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+* XSS == content / 
+  * -- simulate to come from a -- trusted source
+  * -- really comes from -- somewhere else
 
-CSPs are implemented by adding a `Content-Security-Policy` HTTP header to your server responses, or by adding a configured `<meta>` element in the `<head>` section of your HTML files.
-
->[!NOTE]
->
-> For more detailed information on CSP, refer to the [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
-
-Tags in Adobe Experience Platform are a tag management system that is designed to dynamically load scripts on your website. A default CSP blocks these dynamically loaded scripts due to potential security problems. This document provides guidance on how to configure your CSP to allow dynamically loaded scripts from tags.
+* TODO:
+Tags in Adobe Experience Platform are a tag management system that is designed to dynamically load scripts on your website. 
+A default CSP blocks these dynamically loaded scripts due to potential security problems. 
+This document provides guidance on how to configure your CSP to allow dynamically loaded scripts from tags.
 
 If you want tags to work with your CSP, there are two main challenges to overcome:
 
 * **The source for your tag library must be trusted.** If this condition is not met, the tag library and other required JavaScript files are blocked by the browser and won't load on the page.
 * **Inline scripts must be allowed.** If this condition is not met, Custom Code rule actions are blocked on the page and won't execute properly.
 
-Increased security requires an increased amount of work on behalf of the content creator. If you want to use tags and have a CSP in place, you have to address both of these issues without incorrectly marking other scripts as safe. The rest of this document provides guidance on how to achieve this.
+Increased security requires an increased amount of work on behalf of the content creator. 
+If you want to use tags and have a CSP in place, you have to address both of these issues without incorrectly marking other scripts as safe. 
+The rest of this document provides guidance on how to achieve this.
 
 ## Add tags as a trusted source
 
